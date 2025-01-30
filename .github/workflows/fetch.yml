@@ -59,6 +59,7 @@ jobs:
       - name: "[DOWNLOAD] Download last published time files"
         uses: actions/download-artifact@v4
         with:
+          path: lastPublished/
           merge-multiple: true
       - name: "[LOG] Show list"
         run: ls -alR
