@@ -44,7 +44,7 @@ jobs:
           echo $output
           echo "::set-output name=artifact-name::$output"
       - name: "[WRAPUP] Upload last published time file"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lastPublished
           path: lastPublished/${{ steps.sanitize.outputs.artifact-name }}.json
@@ -57,7 +57,7 @@ jobs:
         with:
           ref: bot
       - name: "[DOWNLOAD] Download last published time files"
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
       - name: "[LOG] Show list"
         run: ls -alR
       - name: "[LOG] Show diff"
